@@ -11,7 +11,13 @@ const bidRoutes = require("./routes/bid");
 const app = express();
 
 // Middleware
-app.use(cors());
+// Enable CORS for specific origins
+const corsOptions = {
+    origin: 'http://localhost:5173', // Replace with your frontend URL
+    optionsSuccessStatus: 200,
+  };
+  
+  app.use(cors(corsOptions));
 app.use(express.json());
 app.use(morgan("dev"));
 

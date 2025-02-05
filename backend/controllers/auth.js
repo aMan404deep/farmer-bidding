@@ -2,7 +2,7 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const Farmer = require("../models/Farmer");
 const Transporter = require("../models/Transporter");
-
+require("dotenv").config();
 const signup = async (req, res) => {
   const { name, email, password, phone, role } = req.body;
 
